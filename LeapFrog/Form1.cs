@@ -65,7 +65,7 @@ namespace LeapFrog {
 			Invalidate(true);
 		}
 
-		//fix scene draw here
+		//scene draw here
 		private void Form1_Paint(object sender, PaintEventArgs e) {
 			//e.Graphics.Clear(Color.Transparent);
 			
@@ -73,7 +73,7 @@ namespace LeapFrog {
 		}
 
 
-		//fix scene call to frog here
+		//scene call to frog here
 		private void Form1_KeyPress(object sender, KeyPressEventArgs e) {
 			scene.frog.Jump(e.KeyChar, this.Width, this.Height);
 			Invalidate(true);
@@ -96,14 +96,6 @@ namespace LeapFrog {
 					Close();
 				}
 			}
-		}
-		//fix this later
-		private void Form1_ResizeEnd(object sender, EventArgs e) {
-			Invalidate(true);
-		}
-
-		private void Form1_ResizeBegin(object sender, EventArgs e) {
-			Invalidate(true);
 		}
 
 		private void lblStatus_Paint(object sender, PaintEventArgs e) {
