@@ -25,7 +25,7 @@ namespace LeapFrog {
 			this.listVehicles = new List<Vehicle>();
 			this.listTrees = new List<Tree>();
 			this.livesLeft = 2;
-			this.points = 0;
+			//this.points = 0;
 			this.Width = w;
 			this.Height = h;
 			this.gameIsOver = false;
