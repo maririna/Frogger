@@ -87,21 +87,17 @@ namespace LeapFrog {
 			Pen pen1 = new Pen(Color.LightGray, 30);
 			Pen penDash = new Pen(Color.WhiteSmoke, 2);
 			penDash.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-
+			
+			//the motorway, three lanes
 			g.DrawLine(pen, 0, this.Height / 2 - 52, this.Width, this.Height / 2 - 52);
-
 			g.DrawLine(pen, 0, this.Height / 2, this.Width, this.Height / 2);
-		
 			g.DrawLine(pen, 0, this.Height / 2 + 52, this.Width, this.Height / 2 + 52);
 			
-			//dash
+			//dashed lines
 			g.DrawLine(penDash, 0, this.Height / 2 - 26, this.Width, this.Height / 2 - 26);
 			g.DrawLine(penDash, 0, this.Height / 2 + 26, this.Width, this.Height / 2 + 26);
-
 			
-
-			
-
+			//sidewalks
 			g.DrawLine(pen1, 0, this.Height / 2 + 90, this.Width, this.Height / 2 + 90);
 			g.DrawLine(pen1, 0, this.Height / 2 - 90, this.Width, this.Height / 2 - 90);
 			pen.Dispose();
