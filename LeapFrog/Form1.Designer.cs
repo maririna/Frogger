@@ -105,8 +105,6 @@
 			this.MinimumSize = new System.Drawing.Size(800, 800);
 			this.Name = "Form1";
 			this.Text = "Form1";
-			this.ResizeBegin += new System.EventHandler(this.Form1_ResizeBegin);
-			this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
 			this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
 			this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
 			this.statusStrip1.ResumeLayout(false);
