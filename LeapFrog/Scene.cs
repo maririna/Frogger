@@ -15,7 +15,7 @@ namespace LeapFrog {
 		List<Vehicle> listVehicles;
 		public Frog frog { get; set; }
 		public int livesLeft { get; set; }
-		public int points { get; set; }
+		//public int points { get; set; } for next version with stages and flyes
 		public bool gameIsOver { get; set; }
 		
 		public int Width { get; set; }
