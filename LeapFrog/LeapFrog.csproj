@@ -69,6 +69,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -83,17 +84,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Pictures\busToLeft.png" />
-    <Content Include="Pictures\carBlueToRight.png" />
-    <Content Include="Pictures\carGreenToRight.png" />
-    <Content Include="Pictures\carPinkToRight.png" />
-    <Content Include="Pictures\frog.png" />
-    <Content Include="Pictures\frog1.png" />
-    <Content Include="Pictures\happyFrog.png" />
-    <Content Include="Pictures\smashed.png" />
-    <Content Include="Pictures\tree1.png" />
+    <Folder Include="Pictures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\busToLeft.png" />
+    <Content Include="Resources\carBlueToRight.png" />
+    <Content Include="Resources\carGreenToRight.png" />
+    <Content Include="Resources\carPinkToRight.png" />
+    <Content Include="Resources\frog.png" />
+    <Content Include="Resources\frog1.png" />
+    <Content Include="Resources\happyFrog.png" />
+    <Content Include="Resources\smashed.png" />
+    <Content Include="Resources\tree1.png" />
+    <None Include="Resources\green2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

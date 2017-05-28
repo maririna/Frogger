@@ -28,9 +28,7 @@ namespace LeapFrog {
 	}
 
 
-	public class Car : Vehicle {
-		//Image img = new Bitmap(""); //insert filename later here and maybe size?
-		
+	public class Car : Vehicle {	
 		public Car(Point p) : base(p) {
 			this.Speed = 15;
 			this.Width = 30;
@@ -38,13 +36,13 @@ namespace LeapFrog {
 			Random random = new Random(); //for color of the cars
 			int r = random.Next();
 			if (r % 7 == 0) {
-				imgFile = new Bitmap(@"E:\FINKI\II GODINA\IV semestar\ВИЗУЕЛНО ПРОГРАМИРАЊЕ\PROEKTNA\LeapFrog\LeapFrog\Pictures\carPinkToRight.png");//so drag and drop od resources fileot od solution explorer stavi ovde car
+				imgFile = new Bitmap("../../Resources/carPinkToRight.png");
 			}
 			else if (r % 3 == 0) {
-				imgFile = new Bitmap(@"E:\FINKI\II GODINA\IV semestar\ВИЗУЕЛНО ПРОГРАМИРАЊЕ\PROEKTNA\LeapFrog\LeapFrog\Pictures\carBlueToRight.png");//so drag and drop od resources fileot od solution explorer stavi ovde 
+				imgFile = new Bitmap("../../Resources/carBlueToRight.png");
 			}
 			else {
-				imgFile = new Bitmap(@"E:\FINKI\II GODINA\IV semestar\ВИЗУЕЛНО ПРОГРАМИРАЊЕ\PROEKTNA\LeapFrog\LeapFrog\Pictures\carGreenToRight.png");//so drag and drop od resources fileot od solution explorer stavi ovde car
+				imgFile = new Bitmap("../../Resources/carGreenToRight.png");
 			}
 		}
 
@@ -69,13 +67,11 @@ namespace LeapFrog {
 	}
 
 	public class Bus : Vehicle {
-		//Image img = new Bitmap(""); //insert filename later here and maybe size?
-
 		public Bus(Point p) : base(p) {
 			this.Speed = 5;
 			this.Width = 40;
 			this.Height = 20;
-			imgFile = new Bitmap(@"E:\FINKI\II GODINA\IV semestar\ВИЗУЕЛНО ПРОГРАМИРАЊЕ\PROEKTNA\LeapFrog\LeapFrog\Pictures\busToLeft.png");//so drag and drop od resources fileot od solution explorer stavi ovde bus
+			imgFile = new Bitmap("../../Resources/busToLeft.png");
 		}
 
 		public override void Draw(Graphics g) {

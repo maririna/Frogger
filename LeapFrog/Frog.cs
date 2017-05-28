@@ -14,6 +14,7 @@ namespace LeapFrog {
 		public bool noMoreUp { get; set; }
 		public bool IsTouched { get; set; }
 		public bool OnStart { get; set; }
+		public bool cantGoUp { get; set; }
 
 		public Frog(Point p) { //zema sredina od tekoven width posle vo form i ja crta najdolu
 			this.Location = p;
@@ -25,47 +26,47 @@ namespace LeapFrog {
 
 		public void Jump(char c, int w,int h) {
 			OnStart = false; //za da se smeni slikata vo skokacka
+			if (c == 'w') { 
+				if (((Location.Y == 540 || Location.Y == 320) && (Location.X == 250 || Location.X == 30 || Location.X == 415 || Location.X == 470 || Location.X == 745))) {
+					//do nothing
+				}
+				else if (Location.Y < 10) { 
+					noMoreUp = true; 
+				}
+				else Location = new Point(Location.X, Location.Y - 55);
+			}
+			else if (c == 'a') { 
+				if (Location.X < 10 || ((Location.Y == 265 || Location.Y == 485) && (Location.X == 85 || Location.X == 305 || Location.X == 525))) {
+					//do nothing
+				}
+				else Location = new Point(Location.X-55, Location.Y);
+				}
 
-			if (c == 'w') { //ad kraen uslov
-				if (Location.Y > 10) { //plus proveri dali ima drvo od gore
-					Location = new Point(Location.X, Location.Y - 55);
+			else if (c == 'd') { 
+				if (Location.X > w - 100 || ((Location.Y == 265 || Location.Y == 485) && (Location.X == 415 || Location.X == 690 || Location.X == 195))) {
+					//do nothing
 				}
-				else noMoreUp = true;
-			}
-			else if (c == 's') { //ad kraen uslov
-				if (Location.Y < h - 100) {
-					Location = new Point(Location.X, Location.Y + 55);
-				}
-			}
-			else if (c == 'a') { //ad kraen uslov
-				if (Location.X > 10) {
-					Location = new Point(Location.X - 55, Location.Y);
-				}
-			}
-			else if (c == 'd') { //ad kraen uslov
-				if (Location.X < w - 100) {
-					Location = new Point(Location.X + 55, Location.Y);
-				}
+				else Location = new Point(Location.X + 55, Location.Y);
 			}
 		}
 
-		//check paths
+
 		public void Draw(Graphics g) {
 			
 			if (noMoreUp) {
-				Image frogBitmap = new Bitmap(@"E:\FINKI\II GODINA\IV semestar\ВИЗУЕЛНО ПРОГРАМИРАЊЕ\PROEKTNA\LeapFrog\LeapFrog\Pictures\happyFrog.png");//so drag and drop od resources fileot od solution explorer stavi ovde happy frog
-				g.DrawImage(frogBitmap, Location);
+				Image frogBitmap = new Bitmap("../../Resources/happyFrog.png");//so drag and drop od resources fileot od solution explorer stavi ovde happy frog
+				g.DrawImage(frogBitmap, new Point(Location.X, Location.Y+25));
 			}
 			else if (IsTouched) {
-				Image frogBitmap = new Bitmap(@"E:\FINKI\II GODINA\IV semestar\ВИЗУЕЛНО ПРОГРАМИРАЊЕ\PROEKTNA\LeapFrog\LeapFrog\Pictures\smashed.png");//smashed
+				Image frogBitmap = new Bitmap("../../Resources/smashed.png");//smashed
 				g.DrawImage(frogBitmap, Location);
 			}
 			else if (OnStart) {
-				Image frogBitmap = new Bitmap(@"E:\FINKI\II GODINA\IV semestar\ВИЗУЕЛНО ПРОГРАМИРАЊЕ\PROEKTNA\LeapFrog\LeapFrog\Pictures\frog.png");//frog
+				Image frogBitmap = new Bitmap("../../Resources/frog.png");//frog
 				g.DrawImage(frogBitmap, Location);
 			}
 			else {
-				Image frogBitmap = new Bitmap(@"E:\FINKI\II GODINA\IV semestar\ВИЗУЕЛНО ПРОГРАМИРАЊЕ\PROEKTNA\LeapFrog\LeapFrog\Pictures\frog1.png");//frog
+				Image frogBitmap = new Bitmap("../../Resources/frog1.png");//frog
 				g.DrawImage(frogBitmap, Location);
 			}
 
@@ -98,25 +99,6 @@ namespace LeapFrog {
 			}
 		}
 
-		//THIS TO BE IMPLEMENTED TO PREVENT FROG FROM MOVING
-	/*	public Boolean touchesTree(string side) {
-			if (side == "u") {
-				return touchesFromUp();
-			}
-			else if (side == "d") {
-				return touchesFromDown();
-			}
-			if (side == "l") {
-				return touchesFromLeft();
-			}
-			if (side == "r") {
-				return touchesFromRight();
-			}
 		}
-		*/
-
-
-
-	}
 
 }

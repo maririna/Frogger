@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace LeapFrog {
 	public class Tree {
-		Point Location;
-		int rad { get; set; } //use to check if frog touches
+		public Point Location { get; set; }
+		public int Radius { get; set; } //use to check if frog touches
 
 		public Tree(Point p) {
 			Location = p;
-			this.rad = 30;
+			this.Radius = 30;
 		}
 
 		public void Draw(Graphics g) {
-			Image frogBitmap = new Bitmap(@"E:\FINKI\II GODINA\IV semestar\ВИЗУЕЛНО ПРОГРАМИРАЊЕ\PROEKTNA\LeapFrog\LeapFrog\Pictures\tree1.png");//tree picture
+			Image frogBitmap = new Bitmap("../../Resources/tree1.png");//tree picture
 			g.DrawImage(frogBitmap, Location);
 
 		}
